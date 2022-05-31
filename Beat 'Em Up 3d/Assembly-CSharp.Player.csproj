@@ -57,10 +57,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player Scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\AttackUniversal.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\DeactivateGameObject.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimationDelegate.cs" />
+    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\TagManager.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimation.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
-    <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\ShakeCamera.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\HealthUI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Shaders\AdditiveTint.shader" />

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   radius: 1
   damage: 2
   is_Player: 1
@@ -64,7 +64,7 @@ GameObject:
   m_Layer: 0
   m_Name: Left Hand Attack Point
   m_TagString: Untagged
-  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   radius: 1
   damage: 2
   is_Player: 1
@@ -114,8 +114,9 @@ GameObject:
   - component: {fileID: 7424394014307416242}
   - component: {fileID: 7424394014307416243}
   - component: {fileID: 3721969228836128714}
-  - component: {fileID: 5433180389345068016}
   - component: {fileID: 7748002568790056152}
+  - component: {fileID: 7114322056907279849}
+  - component: {fileID: 1069264559346169035}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -182,7 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walk_Speed: 3
   z_Speed: 1.5
---- !u!114 &5433180389345068016
+--- !u!114 &7748002568790056152
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02f1545ce541d5044bd360912cefe860, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7748002568790056152
+--- !u!114 &7114322056907279849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +204,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 7424394014307416245}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02f1545ce541d5044bd360912cefe860, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ce69a010f52ade488af8b3776c40ef6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  is_Player: 1
+--- !u!114 &1069264559346169035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7424394014307416245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dfba4f53d2558c84e9259587b83af1ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7535785615084110039
@@ -251,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   radius: 1
   damage: 2
   is_Player: 1
@@ -302,7 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collisionLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 1024
   radius: 1
   damage: 2
   is_Player: 1
@@ -318,6 +333,10 @@ PrefabInstance:
     - target: {fileID: 100110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
       propertyPath: m_Name
       value: Player Child
+      objectReference: {fileID: 0}
+    - target: {fileID: 100110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 400110, guid: 68ff77d4e131db34586dc6f268e92dca, type: 3}
       propertyPath: m_RootOrder

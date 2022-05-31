@@ -7,7 +7,7 @@ public class AttackUniversal : MonoBehaviour
 
     public LayerMask collisionLayer;
     public float radius = 1f;
-    public float damage = 2f;
+    public float damage = 10f;
 
     public bool is_Player, is_Enemy;
 
@@ -37,17 +37,20 @@ public class AttackUniversal : MonoBehaviour
 
                 if (gameObject.CompareTag(Tags.LEFT_ARM_TAG) || gameObject.CompareTag(Tags.LEFT_LEG_TAG))
                 {
-                    //hit[0].getComponent<HealthScript>().ApplyDamage(damage,true);
+                    hit[0].GetComponent<HealthScript>().ApplyDamage(damage,true);
                 }
                 else
                 {
-                   //hit[0].getComponent<HealthScript>().ApplyDamage(damage,false);
+                   hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
                 }
                 
             }
-            
-            
-            gameObject.SetActive(false);
+            if (is_Enemy)
+            {
+                hit[0].GetComponent<HealthScript>().ApplyDamage(damage, false);
+            }
+
+                gameObject.SetActive(false);
         }
     }
 

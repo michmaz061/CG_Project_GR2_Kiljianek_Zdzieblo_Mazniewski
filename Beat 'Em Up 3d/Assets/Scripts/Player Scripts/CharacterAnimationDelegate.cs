@@ -17,6 +17,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 
 	private EnemyMovement enemy_Movement;
 
+    private ShakeCamera shakeCamera;
+
     void Awake()
     {
 		animationScript = GetComponent<CharacterAnimation>();
@@ -26,6 +28,8 @@ public class CharacterAnimationDelegate : MonoBehaviour
 		{
 			enemy_Movement = GetComponentInParent<EnemyMovement>();
 		}
+
+        shakeCamera = GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
 	}
 
     void Left_Arm_Attack_Point_On()
@@ -80,11 +84,51 @@ public class CharacterAnimationDelegate : MonoBehaviour
         }
     }
 
+    void TagLeft_Arm()
+    {
+        left_Arm_Attack_Point.tag = Tags.LEFT_ARM_TAG;
+    }
+    void UnTagLeft_Arm()
+    {
+        left_Arm_Attack_Point.tag = Tags.UNTAGGED_TAG;
+    }
+    void TagLeft_Leg()
+    {
+        left_Leg_Attack_Point.tag = Tags.LEFT_ARM_TAG;
+    }
+    void UnTagLeft_Leg()
+    {
+        left_Leg_Attack_Point.tag = Tags.UNTAGGED_TAG;
+    }
 
+    void Enemy_StandUp()
+    {
+        StartCoroutine(StandUpAfterTime());
+    }
 
+    IEnumerator StandUpAfterTime()
+    {
+        yield return new WaitForSeconds(stand_Up_Timer);
+        animationScript.StadUp();
+    }
 
+    void ShakeCameraOnFall()
+    {
+        shakeCamera.ShouldShake = true;
+    }
 
-	public void Attack_FX_Sound()
+    void CharacterDied()
+    {
+        Invoke("DeactivateGameObject", 2f);
+    }
+
+    void DeactivateGameObject()
+    {
+        EnemyManager.instance.SpawnEnemy();
+        gameObject.SetActive(false);
+    }
+
+    public void Attack_FX_Sound()
     {
 		audioSource.volume = 0.2f;
         audioSource.clip = whoosh_Sound;

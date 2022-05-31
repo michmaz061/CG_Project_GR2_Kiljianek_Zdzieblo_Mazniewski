@@ -13,7 +13,7 @@ public class EnemyMovement : MonoBehaviour
 
     private Transform playerTarget;
     public float attack_Distance = 1f;
-    private float chase_Player_After_Attack = 1f;
+    public float chase_Player_After_Attack = 1f;
 
     private float current_Attack_Time;
     private float default_Attack_Time = 2f;
@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
 
             if(myBody.velocity.sqrMagnitude != 0)
             {
-                print("Test");
+                print("Walk true");
                 enemyAnim.Walk(true);
             }
         }
@@ -65,7 +65,7 @@ public class EnemyMovement : MonoBehaviour
         {
             myBody.velocity = Vector3.zero;
             enemyAnim.Walk(false);
-
+            print("Walke false");
             followPlayer = false;
             attackPlayer = true;
         }
