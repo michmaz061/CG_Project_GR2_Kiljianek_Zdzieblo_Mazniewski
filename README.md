@@ -1,1 +1,0 @@
-# CG_Project_GR2_Kiljianek_Zdzieblo_Mazniewski
