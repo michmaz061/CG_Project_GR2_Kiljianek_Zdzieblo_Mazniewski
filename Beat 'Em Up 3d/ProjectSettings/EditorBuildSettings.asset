@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/UpdateV2.unity
     guid: bec9c3936ac452944b0f99b488c283d8
+  - enabled: 1
+    path: Assets/TimeTrialV.unity
+    guid: abd7ece34802df24fba80e92c494daeb
   m_configObjects: {}

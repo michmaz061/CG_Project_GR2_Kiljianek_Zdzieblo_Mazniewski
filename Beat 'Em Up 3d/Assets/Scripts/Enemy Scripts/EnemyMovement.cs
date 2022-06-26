@@ -57,7 +57,7 @@ public class EnemyMovement : MonoBehaviour
 
             if(myBody.velocity.sqrMagnitude != 0)
             {
-                print("Walk true");
+                //print("Walk true");
                 enemyAnim.Walk(true);
             }
         }

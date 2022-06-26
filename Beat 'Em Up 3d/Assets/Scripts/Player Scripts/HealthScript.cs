@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthScript : MonoBehaviour
 {
     // Start is called before the first frame update
+    public HealthScript instance;
     private HealthUI health_UI;
     public float health = 100f;
-
+    public bool playerAlive = true;
     private CharacterAnimation animationScript;
     private EnemyMovement enemyMovement;
 
@@ -19,6 +21,10 @@ public class HealthScript : MonoBehaviour
         animationScript = GetComponentInChildren<CharacterAnimation>();
 
         health_UI = GetComponent<HealthUI>();
+        if (playerAlive == false)
+        {
+            GameObject.Find("Canvas").SendMessage("DeathOfPlayer");
+        }
     }
 
     public void ApplyDamage(float damage, bool knockDown)
@@ -37,6 +43,7 @@ public class HealthScript : MonoBehaviour
 
             if (is_Player)
             {
+                EndingScreen.instance.DeathOfPlayer();
                 GameObject.FindWithTag(Tags.ENEMY_TAG).GetComponent<EnemyMovement>().enabled = false;
             }
             return;

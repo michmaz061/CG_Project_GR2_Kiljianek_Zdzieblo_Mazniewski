@@ -59,25 +59,52 @@
     <Compile Include="Assets\Scripts\Player Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\AttackUniversal.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\DeactivateGameObject.cs" />
+    <Compile Include="Assets\Scripts\Helper Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimationDelegate.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\HealthUI.cs" />
+    <Compile Include="Assets\Scripts\UI Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\HealthScript.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\TagManager.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\ShakeCamera.cs" />
+    <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\EnemyManager.cs" />
-    <Compile Include="Assets\Scripts\Player Scripts\HealthUI.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
+    <Compile Include="Assets\EndingScreen.cs" />
+    <Compile Include="Assets\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\Shaders\AdditiveTint.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\Shaders\UnlitLightMapEmissive.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\Shaders\UntilIlum.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Shaders\SimpleAlphaColor.shader" />
     <None Include="Assets\Shaders\MatCapAdd.shader" />
     <None Include="Assets\Shaders\MatCapSimple.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
     <None Include="Assets\Models\Enemy\EnemyNames.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile SSD.shader" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\Shaders\UnlitLightMapEmissiveCubeMap.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\Hit FX\Shaders\AdditiveInFront.shader" />
   </ItemGroup>
   <ItemGroup>
@@ -279,6 +306,9 @@
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PlayerPrefsEditor.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.PlayerPrefsEditor.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -296,6 +326,9 @@
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.PlayerPrefsEditor.EditorResources">
+      <HintPath>Library\ScriptAssemblies\Unity.PlayerPrefsEditor.EditorResources.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
       <HintPath>D:\Program Files (x86)\Unity\2020.3.30f1\Editor\Data\NetStandard\ref\2.0.0\netstandard.dll</HintPath>
@@ -651,6 +684,10 @@
     <ProjectReference Include="Unity.TextMeshPro.Player.csproj">
       <Project>{F5AFB04B-CCAB-137B-E478-653BDD5E3F82}</Project>
       <Name>Unity.TextMeshPro.Player</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.PlayerPrefsEditor.Samples.SampleScene.Player.csproj">
+      <Project>{2F77D58E-143B-AAC4-5867-17FB7176DDA0}</Project>
+      <Name>Unity.PlayerPrefsEditor.Samples.SampleScene.Player</Name>
     </ProjectReference>
     <ProjectReference Include="UnityEngine.UI.Player.csproj">
       <Project>{2EA5F9EE-1AB6-F81F-CAEC-BA4FEDD0E05F}</Project>
