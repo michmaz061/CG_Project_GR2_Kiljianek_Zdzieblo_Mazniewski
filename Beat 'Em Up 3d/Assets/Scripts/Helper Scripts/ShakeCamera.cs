@@ -16,6 +16,7 @@ public class ShakeCamera : MonoBehaviour
     void Start()
     {
         startPosition = transform.localPosition;
+        
         initialDuration = duration;
     }
 

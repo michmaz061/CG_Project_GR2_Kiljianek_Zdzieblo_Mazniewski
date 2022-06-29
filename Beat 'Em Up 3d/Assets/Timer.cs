@@ -8,6 +8,8 @@ public class Timer : MonoBehaviour
     public Text timerTextl;
     private float startTime;
     private bool finished = false;
+    public int timeMinute=0;
+    public int timeSeconds=3;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +28,11 @@ public class Timer : MonoBehaviour
         string seconds = (t % 60).ToString("f1");
 
         timerTextl.text = minutes + ":" + seconds;
+
+        if (minutes == timeMinute.ToString() && seconds == timeSeconds.ToString()+",0")
+        {
+            FindObjectOfType<EndingScreen>().TimeOut();
+        }
     }
 
     public void Finish()

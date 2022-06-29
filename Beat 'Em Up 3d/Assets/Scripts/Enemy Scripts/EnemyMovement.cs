@@ -65,7 +65,6 @@ public class EnemyMovement : MonoBehaviour
         {
             myBody.velocity = Vector3.zero;
             enemyAnim.Walk(false);
-            print("Walke false");
             followPlayer = false;
             attackPlayer = true;
         }

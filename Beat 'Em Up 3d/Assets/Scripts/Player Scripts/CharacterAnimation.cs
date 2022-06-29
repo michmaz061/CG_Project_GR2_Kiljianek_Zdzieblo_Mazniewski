@@ -17,6 +17,11 @@ public class CharacterAnimation : MonoBehaviour
         anim.SetBool(AnimationTags.MOVEMENT, move);
     }
 
+    public void Defend(bool defend)
+    {
+        anim.SetBool(AnimationTags.DEFEND, defend);
+    }
+
     public void Punch_1()
     {
         anim.SetTrigger(AnimationTags.PUNCH_1_TRIGGER);
@@ -79,6 +84,11 @@ public class CharacterAnimation : MonoBehaviour
     public void Hit()
     {
         anim.SetTrigger(AnimationTags.HIT_TRIGGER);
+    }
+
+    public void DefendEnemy()
+    {
+        anim.SetTrigger(AnimationTags.DEFENDENEMY_TRIGGER);
     }
 
     public void Death()

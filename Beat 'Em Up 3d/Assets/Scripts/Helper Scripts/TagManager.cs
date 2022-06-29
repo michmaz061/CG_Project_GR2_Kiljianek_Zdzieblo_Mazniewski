@@ -40,7 +40,7 @@ public class AnimationTags
 
     public const string IDLE_ANIMATION = "Idle";
 
-
+    public const string DEFEND = "Defend";
 
     public const string KNOCK_DOWN_TRIGGER = "KnockDown";
 
@@ -49,6 +49,8 @@ public class AnimationTags
     public const string HIT_TRIGGER = "Hit";
 
     public const string DEATH_TRIGGER = "Death";
+
+    public const string DEFENDENEMY_TRIGGER = "DefendEnemy";
 
 }
 

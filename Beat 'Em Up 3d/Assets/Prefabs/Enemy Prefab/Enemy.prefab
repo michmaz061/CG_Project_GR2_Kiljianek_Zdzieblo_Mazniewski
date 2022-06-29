@@ -47,7 +47,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   radius: 1
-  damage: 2
+  damage: 4
   is_Player: 0
   is_Enemy: 1
   hit_FX_Prefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d89bdbfec25a5894099dc27ea45a9b76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.7
+  speed: 1.9
   attack_Distance: 1.3
   chase_Player_After_Attack: 0.2
 --- !u!114 &2191124505411939217
@@ -143,7 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce69a010f52ade488af8b3776c40ef6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  instance: {fileID: 0}
+  health: 50
+  playerAlive: 1
+  defend: 0
   is_Player: 0
 --- !u!1 &4926256450479563908
 GameObject:
@@ -192,7 +195,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   radius: 1
-  damage: 4
+  damage: 8
   is_Player: 0
   is_Enemy: 1
   hit_FX_Prefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
@@ -243,7 +246,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   radius: 1
-  damage: 2
+  damage: 4
   is_Player: 0
   is_Enemy: 1
   hit_FX_Prefab: {fileID: 115594, guid: efd3011863918584d94591e177fa8d29, type: 3}
@@ -1715,11 +1718,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4300000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
     - target: {fileID: 13700000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 8fc360652f7a3aa4c8e5320e48e2a790, type: 2}
     - target: {fileID: 13700000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
       propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fc360652f7a3aa4c8e5320e48e2a790, type: 2}
+    - target: {fileID: 13700000, guid: 87886e989f329e84fbd053fbcaff4f6b, type: 3}
+      propertyPath: m_Materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 8fc360652f7a3aa4c8e5320e48e2a790, type: 2}
     m_RemovedComponents: []

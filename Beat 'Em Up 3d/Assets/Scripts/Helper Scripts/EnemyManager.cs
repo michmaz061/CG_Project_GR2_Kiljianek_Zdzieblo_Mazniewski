@@ -7,6 +7,7 @@ public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
     public int timeDelay=2;
+    public float damage = 10f;
     [SerializeField]
     private GameObject enemyPrefab;
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class EnemyManager : MonoBehaviour
     void Start()
     {
             Invoke("SpawnEnemy", timeDelay);
+            
     }
     // Update is called once per frame
     public void SpawnEnemy()

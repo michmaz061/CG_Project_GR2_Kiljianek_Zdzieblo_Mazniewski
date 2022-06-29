@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class EndingScreen : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -19,33 +20,26 @@ public class EndingScreen : MonoBehaviour
 
     public bool playerAlive = true;
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (playerAlive == true)
-        {
-            DeathOfPlayer();
-        }
-        /*if (health.playerAlive == false)
-        {
-            GameObject.Find("Player").SendMessage("Finish");
-            EndingCondition = true;
-        }
-        if (EndingCondition)
-               Pause();*/
-    }
+    public Text scoreText;
+    public Text highscoreText;
 
     public void PlayAgain()
     {
         endingScreenUI.SetActive(false);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("TimeTrialIV");
+        SceneManager.LoadScene("TimeTrialV");
     }
     public void DeathOfPlayer()
     {
         print("Death true");
-        endingScreenUI.SetActive(true);
-        Time.timeScale = 0f;
+        Invoke("InvokeScreen",5);
+        //GameIsPaused = true;
+    }
+
+    public void TimeOut()
+    {
+        print("Death true");
+        InvokeScreen();
         //GameIsPaused = true;
     }
     void Pause()
@@ -53,6 +47,12 @@ public class EndingScreen : MonoBehaviour
         endingScreenUI.SetActive(true);
         Time.timeScale = 0f;
         //GameIsPaused = true;
+    }
+
+    void InvokeScreen()
+    {
+        endingScreenUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void LoadMenu()
@@ -66,6 +66,18 @@ public class EndingScreen : MonoBehaviour
     {
         Debug.Log("Quitting game... ");
         Application.Quit();
+    }
+
+    public void AddToScore(Text score)
+    {
+        scoreText = score;
+        scoreText.text = score.ToString() + " POINTS";
+    }
+
+    public void AddToHighscore(Text highscore)
+    {
+        highscoreText = highscore;
+        highscoreText.text = "HGHSCORE: " + highscore.ToString();
     }
 
 }

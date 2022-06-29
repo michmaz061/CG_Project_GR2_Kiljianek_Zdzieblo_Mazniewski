@@ -12,10 +12,11 @@ public class HealthScript : MonoBehaviour
     public bool playerAlive = true;
     private CharacterAnimation animationScript;
     private EnemyMovement enemyMovement;
-
+    public bool defend=false;
     private bool  characterDied;
     public bool is_Player;
 
+    
     void Awake()
     {
         animationScript = GetComponentInChildren<CharacterAnimation>();
@@ -27,11 +28,24 @@ public class HealthScript : MonoBehaviour
         }
     }
 
+    public void CheckIfDefend(bool defendToCheck)
+    {
+        //print("I am checking right now!");
+        defend = defendToCheck;
+        if (defend)
+            print("Defending");
+
+        if (!defend)
+            print("Stopped defending");
+    }
+
     public void ApplyDamage(float damage, bool knockDown)
     {
-        if (characterDied)
+
+        if (characterDied||defend)
             return;
-        health -= damage;
+
+            health -= damage;
         if (is_Player)
         {
             health_UI.DisplayHealth(health);
@@ -43,7 +57,8 @@ public class HealthScript : MonoBehaviour
 
             if (is_Player)
             {
-                EndingScreen.instance.DeathOfPlayer();
+                FindObjectOfType<EndingScreen>().DeathOfPlayer();
+                FindObjectOfType<PlayerMovement>().CharacterDied();
                 GameObject.FindWithTag(Tags.ENEMY_TAG).GetComponent<EnemyMovement>().enabled = false;
             }
             return;
