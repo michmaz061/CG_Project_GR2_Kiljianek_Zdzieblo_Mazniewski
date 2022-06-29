@@ -20,13 +20,31 @@ public class MenuController : MonoBehaviour
     private float _brightnessLevel;
     
     [Header("Level Loading")]
-    public string _newGameLevel;
+    public string _easyLevel;
+    public string _mediumLevel;
+    public string _hardLevel;
+    public string _veryHardLevel;
     
-    public void NewGame()
+    public void LoadEasyLevel()
     {
-        SceneManager.LoadScene(_newGameLevel);
+        SceneManager.LoadScene(_easyLevel);
     }
 
+    public void LoadMediumLevel()
+    {
+        SceneManager.LoadScene(_mediumLevel);
+    }
+    
+    public void LoadHardLevel()
+    {
+        SceneManager.LoadScene(_hardLevel);
+    }
+    
+    public void LoadVeryHardLevel()
+    {
+        SceneManager.LoadScene(_veryHardLevel);
+    }
+    
     public void Exit()
     {
         Application.Quit();
