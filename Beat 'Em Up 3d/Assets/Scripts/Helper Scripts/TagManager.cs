@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
+/// <summary>
+/// A simple manager for animation tags to simplify work for scripts.
+/// </summary>
 public class AnimationTags
 
 {
@@ -55,7 +57,9 @@ public class AnimationTags
 }
 
 
-
+/// <summary>
+/// A simple manager for axis tags to simplify work for scripts.
+/// </summary>
 public class Axis
 {
 
@@ -66,7 +70,9 @@ public class Axis
 }
 
 
-
+/// <summary>
+/// A simple manager for tags to simplify work for scripts.
+/// </summary>
 public class Tags
 {
 

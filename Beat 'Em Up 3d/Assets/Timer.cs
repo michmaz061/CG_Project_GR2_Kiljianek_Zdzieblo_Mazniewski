@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// A script used to keep track on time and uploading it onto screen. 
+/// </summary>
 public class Timer : MonoBehaviour
 {
     public Text timerTextl;
@@ -17,7 +20,9 @@ public class Timer : MonoBehaviour
         startTime = Time.time;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// In update we check whether the game is finished to stop counting time. If not we change value and upload time onto screen. When the set time limit is hit, then the game ends automatically.
+    /// </summary>
     void Update()
     {
         if (finished)
@@ -35,6 +40,9 @@ public class Timer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// It indicates that the game is finished and changes timer text color.
+    /// </summary>
     public void Finish()
     {
         finished = true;

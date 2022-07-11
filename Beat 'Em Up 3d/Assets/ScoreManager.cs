@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script manages the score points and its upload onto screen.
+/// </summary>
 public class ScoreManager : MonoBehaviour
 {
+   
     public static ScoreManager instance;
 
     public Text scoreText;
@@ -19,7 +23,10 @@ public class ScoreManager : MonoBehaviour
     {
         instance = this;
     }
-    // Start is called before the first frame update
+    
+    /// <summary>
+    /// In start we set all of the values.
+    /// </summary>
     void Start()
     {
         highscore = PlayerPrefs.GetInt("highscore", 0);
@@ -30,7 +37,9 @@ public class ScoreManager : MonoBehaviour
         FindObjectOfType<EndingScreen>().DeathOfPlayer();
     }
 
-    // Update is called once per frame
+/// <summary>
+/// In this method we manage the points calculation and its update on board.
+/// </summary>
 public void AddPoint()
     {
         score += 1;

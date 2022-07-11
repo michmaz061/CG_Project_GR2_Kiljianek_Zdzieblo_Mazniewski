@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// In this script we go deeper in Attack behaviour, such as detecking collisions and applying damage.
+/// </summary>
 public class AttackUniversal : MonoBehaviour
 {
 
@@ -13,6 +16,9 @@ public class AttackUniversal : MonoBehaviour
 
     public GameObject hit_FX_Prefab;
 
+    /// <summary>
+    /// This method is used to detect collisions. Also differentiate between enemy, unguarded player and player to pass information to another script whether to apply damage and how much.
+    /// </summary>
     void DetectCollision()
     {
         Collider[] hit = Physics.OverlapSphere(transform.position, radius, collisionLayer);
@@ -60,13 +66,10 @@ public class AttackUniversal : MonoBehaviour
         }
     }
 
-    public void ChangeDmg(float changedDamage)
-    {
-        damage = changedDamage;
-    }
 
-
-
+    /// <summary>
+    /// Update is used to constantly deteck collisions.
+    /// </summary>
     void Update()
     {
         DetectCollision();

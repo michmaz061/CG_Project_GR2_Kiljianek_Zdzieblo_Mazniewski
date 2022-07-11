@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
+/// <summary>
+/// A script used to manage ending screen.
+/// </summary>
 public class EndingScreen : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -23,25 +27,35 @@ public class EndingScreen : MonoBehaviour
     public Text scoreText;
     public Text highscoreText;
 
+    /// <summary>
+    /// Checks whether player choose to play again and loads the scene from beggining.
+    /// </summary>
     public void PlayAgain()
     {
         endingScreenUI.SetActive(false);
         Time.timeScale = 1f;
         SceneManager.LoadScene("TimeTrialV");
     }
+
+    /// <summary>
+    /// If player died this method is used and invokes screen after a few seconds.
+    /// </summary>
     public void DeathOfPlayer()
     {
-        print("Death true");
         Invoke("InvokeScreen",5);
-        //GameIsPaused = true;
     }
 
+    /// <summary>
+    /// If the time ends this method is used and invokes screen immediately.
+    /// </summary>
     public void TimeOut()
     {
-        print("Death true");
         InvokeScreen();
-        //GameIsPaused = true;
     }
+
+    /// <summary>
+    /// This method is used when player pauses the game.
+    /// </summary>
     void Pause()
     {
         endingScreenUI.SetActive(true);
@@ -49,12 +63,18 @@ public class EndingScreen : MonoBehaviour
         //GameIsPaused = true;
     }
 
+    /// <summary>
+    /// It stops time and shows ending screen.
+    /// </summary>
     void InvokeScreen()
     {
         endingScreenUI.SetActive(true);
         Time.timeScale = 0f;
     }
 
+    /// <summary>
+    /// Method used to load menu if player chooses to.
+    /// </summary>
     public void LoadMenu()
     {
         Debug.Log("Loading menu... ");
@@ -62,22 +82,12 @@ public class EndingScreen : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    /// <summary>
+    /// Method used to quit game if player chooses to.
+    /// </summary>
     public void QuitGame()
     {
         Debug.Log("Quitting game... ");
         Application.Quit();
     }
-
-    public void AddToScore(Text score)
-    {
-        scoreText = score;
-        scoreText.text = score.ToString() + " POINTS";
-    }
-
-    public void AddToHighscore(Text highscore)
-    {
-        highscoreText = highscore;
-        highscoreText.text = "HGHSCORE: " + highscore.ToString();
-    }
-
 }

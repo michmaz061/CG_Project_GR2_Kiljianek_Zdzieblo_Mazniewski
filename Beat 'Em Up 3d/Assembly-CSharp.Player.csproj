@@ -58,11 +58,13 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Player Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\AttackUniversal.cs" />
-    <Compile Include="Assets\Scripts\Helper Scripts\DeactivateGameObject.cs" />
+    <Compile Include="Assets\EndingScreen.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\CameraFollow.cs" />
     <Compile Include="Assets\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimationDelegate.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
+    <Compile Include="Assets\Timer.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\HealthUI.cs" />
     <Compile Include="Assets\Scripts\UI Scripts\MenuController.cs" />
     <Compile Include="Assets\Scripts\Enemy Scripts\EnemyMovement.cs" />
@@ -71,9 +73,6 @@
     <Compile Include="Assets\Scripts\Helper Scripts\ShakeCamera.cs" />
     <Compile Include="Assets\Scripts\Player Scripts\CharacterAnimation.cs" />
     <Compile Include="Assets\Scripts\Helper Scripts\EnemyManager.cs" />
-    <Compile Include="Assets\PauseMenu.cs" />
-    <Compile Include="Assets\EndingScreen.cs" />
-    <Compile Include="Assets\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// A list for following our combos.
+/// </summary>
 public enum ComboState
 {
     NONE,
@@ -13,6 +15,9 @@ public enum ComboState
     KICK_2
 }
 
+/// <summary>
+/// In this script we have defined player attacks.
+/// </summary>
 public class PlayerAttack : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -34,43 +39,51 @@ public class PlayerAttack : MonoBehaviour
         player_Anim = GetComponentInChildren<CharacterAnimation>();
     }
 
+    /// <summary>
+    /// In start we define Combo timers used to keep track on combos.
+    /// </summary>
     void Start()
     {
         current_Combo_Timer = default_Combo_Timer;
         current_Combo_State = ComboState.NONE;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// In update we check whether player wants to and can defend. Also we check combo states.
+    /// </summary>
     void Update()
     {
 
+            
             if (Input.GetKey(KeyCode.C)&&current_Combo_Timer > 0f&&!isWalking&& !defendCheck)
             {
 
-                //print("Defending");
                 player_Anim.Defend(true);
                 defendToPass = true;
-            //FindObjectOfType<HealthScript>().CheckIfDefend(true);
 
         }
             else
             {
-                //print("Stopped defending");
                 player_Anim.Defend(false);
                 defendToPass = false;
-            //FindObjectOfType<HealthScript>().CheckIfDefend(false);
         }
         ComboAttacks();
         ResetComboState();
-        //ResetDefendState();
 
     }
 
+    /// <summary>
+    /// Simple function for returning bool whether player is defending or not.
+    /// </summary>
+    /// <returns>A bool telling if defend is used.</returns>
     public bool returnDefend()
     {
         return defendToPass;
     }
 
+    /// <summary>
+    /// A method that checks if player is walking, and if not if he is performing combos. It uses time to reset combo state.
+    /// </summary>
     void ComboAttacks()
     {
         if (!isWalking)
@@ -122,6 +135,9 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method that resets timer and combo state.
+    /// </summary>
     void ResetComboState()
     {
         if (activateTimerToReset)
@@ -138,7 +154,10 @@ public class PlayerAttack : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// A method used in another script to inform us whether character is walking or not.
+    /// </summary>
+    /// <param name="currentState">Bool telling us whether it is true or not for player walking</param>
     public void IsCharacterWalking(bool currentState)
     {
         isWalking = currentState;

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+/// <summary>
+/// Simple script used to manage pause menu.
+/// </summary>
 public class PauseMenu : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -13,7 +17,9 @@ public class PauseMenu : MonoBehaviour
 
     public GameObject endingScreenUI;
 
-    // Update is called once per frame
+    /// <summary>
+    /// Checks whether player wants to pause game.
+    /// </summary>
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -29,6 +35,9 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method used to resume the game.
+    /// </summary>
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
@@ -36,6 +45,9 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
     }
 
+    /// <summary>
+    /// Method used to pause the game.
+    /// </summary>
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
@@ -43,14 +55,9 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = true;
     }
 
-    public void DeathOfPlayer()
-    {
-        print("Death true");
-        endingScreenUI.SetActive(true);
-        Time.timeScale = 0f;
-        //GameIsPaused = true;
-    }
-
+    /// <summary>
+    /// Method used to load menu.
+    /// </summary>
     public void LoadMenu()
     {
         Debug.Log("Loading menu... ");
@@ -58,6 +65,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+    /// <summary>
+    /// Method used to quit the game.
+    /// </summary>
     public void QuitGame()
     {
         Debug.Log("Quitting game... ");

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script used to manage player movement.
+/// </summary>
 public class PlayerMovement : MonoBehaviour
 {
     private CharacterAnimation player_Anim;
@@ -14,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     private float rotation_Speed = 15f;
 
 
-    // Start is called before the first frame update
+    /// <summary>
+    /// Awake gets player body and his animations.
+    /// </summary>
     void Awake()
     {
  
@@ -22,7 +27,9 @@ public class PlayerMovement : MonoBehaviour
         player_Anim = GetComponentInChildren<CharacterAnimation>();
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Update checks whether player is alive and if yes it fires off Rotate and Walk scripts.
+    /// </summary>
     void Update()
     {
         if (isAlive)
@@ -32,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// In fixed update we detect if player moves.
+    /// </summary>
     void FixedUpdate()
     {
         if (isAlive)
@@ -40,6 +50,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// A method used to rotate player object.
+    /// </summary>
     void RotatePlayer()
     {
         if (Input.GetAxisRaw(Axis.HORIZONTAL_AXIS) > 0)
@@ -52,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Method used to detect if player moves.
+    /// </summary>
     void DetectMovement()
     {
         myBody.velocity = new Vector3(
@@ -60,6 +76,9 @@ public class PlayerMovement : MonoBehaviour
             Input.GetAxisRaw(Axis.VERTICAL_AXIS) * (-z_Speed));
     }
 
+    /// <summary>
+    /// Method used to animate player walking and sending this information to Player attack script.
+    /// </summary>
     void AnimatePlayerWalk()
     {
         if(Input.GetAxisRaw(Axis.HORIZONTAL_AXIS)!=0 || Input.GetAxisRaw(Axis.VERTICAL_AXIS) != 0)
@@ -74,6 +93,9 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Simple method setting isAlive bool.
+    /// </summary>
     public void CharacterDied()
     {
         isAlive = false;

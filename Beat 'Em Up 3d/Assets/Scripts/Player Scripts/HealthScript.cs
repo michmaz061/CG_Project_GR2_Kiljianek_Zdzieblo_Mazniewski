@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This script is used to keep track on character health and modify its value.
+/// </summary>
 public class HealthScript : MonoBehaviour
 {
-    // Start is called before the first frame update
     public HealthScript instance;
     private HealthUI health_UI;
     public float health = 100f;
@@ -16,7 +18,9 @@ public class HealthScript : MonoBehaviour
     private bool  characterDied;
     public bool is_Player;
 
-    
+    /// <summary>
+    /// In awake we have updated Player health UI.
+    /// </summary>
     void Awake()
     {
         animationScript = GetComponentInChildren<CharacterAnimation>();
@@ -28,9 +32,12 @@ public class HealthScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Simple function used in debugging.
+    /// </summary>
+    /// <param name="defendToCheck">Checks whether player is defending or not.</param>
     public void CheckIfDefend(bool defendToCheck)
     {
-        //print("I am checking right now!");
         defend = defendToCheck;
         if (defend)
             print("Defending");
@@ -39,6 +46,11 @@ public class HealthScript : MonoBehaviour
             print("Stopped defending");
     }
 
+    /// <summary>
+    /// A method that applies damage to character health. It checks a set of things such as whether its player or enemy, if player is defending etc. To decide how much and if apply a damage to character. It also decides whether character dies or has enough health to keep going.
+    /// </summary>
+    /// <param name="damage">An float number of damage to be applied. </param>
+    /// <param name="knockDown">A bool deciding whether character can be knocked down or not. </param>
     public void ApplyDamage(float damage, bool knockDown)
     {
 

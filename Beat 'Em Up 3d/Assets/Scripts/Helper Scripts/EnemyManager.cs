@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// In this script, we manage the enemy spawner.
+/// </summary>
+
 public class EnemyManager : MonoBehaviour
 {
     public static EnemyManager instance;
@@ -10,7 +14,10 @@ public class EnemyManager : MonoBehaviour
     public float damage = 10f;
     [SerializeField]
     private GameObject enemyPrefab;
-    // Start is called before the first frame update
+    
+    /// <summary>
+    /// Awake method spawns enemies where their predecessor is dead.
+    /// </summary>
     void Awake()
     {
             if (instance == null)
@@ -19,13 +26,18 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-
+    /// <summary>
+    /// In Start we can set how much of a delay we want to have before first spawn of an enemy.
+    /// </summary>
     void Start()
     {
             Invoke("SpawnEnemy", timeDelay);
             
     }
-    // Update is called once per frame
+    
+    /// <summary>
+    /// In this method we spawn enemy itself.
+    /// </summary>
     public void SpawnEnemy()
     {
         Instantiate(enemyPrefab, transform.position, Quaternion.identity);
