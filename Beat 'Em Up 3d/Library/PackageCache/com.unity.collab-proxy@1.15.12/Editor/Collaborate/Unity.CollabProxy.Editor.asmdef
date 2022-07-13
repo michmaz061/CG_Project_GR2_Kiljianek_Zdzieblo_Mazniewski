@@ -4,7 +4,11 @@
     "references": [
         "Unity.PlasticSCM.Editor",
         "Unity.Services.Core.Editor",
-        "Unity.Settings.Editor"
+        "Unity.Settings.Editor",
+        "UnityEditor.UI",
+        "UnityEngine.UI",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

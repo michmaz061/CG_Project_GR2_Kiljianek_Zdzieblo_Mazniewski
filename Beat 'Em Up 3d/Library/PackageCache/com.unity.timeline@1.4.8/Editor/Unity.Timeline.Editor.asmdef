@@ -1,7 +1,11 @@
 {
     "name": "Unity.Timeline.Editor",
     "references": [
-      "Unity.Timeline"
+      "Unity.Timeline",
+      "UnityEditor.UI",
+      "UnityEngine.UI",
+      "UnityEngine.TestRunner",
+      "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

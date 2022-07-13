@@ -1,7 +1,11 @@
 {
     "name": "Unity.TextMeshPro.Editor",
     "references": [
-        "Unity.TextMeshPro"
+        "Unity.TextMeshPro",
+        "UnityEditor.UI",
+        "UnityEngine.UI",
+        "UnityEngine.TestRunner",
+        "UnityEditor.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

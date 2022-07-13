@@ -25,43 +25,69 @@ public class MenuController : MonoBehaviour
     public string _hardLevel;
     public string _veryHardLevel;
     
+    /// <summary>
+    /// Loads the easy level.
+    /// </summary>
     public void LoadEasyLevel()
     {
         SceneManager.LoadScene(_easyLevel);
     }
 
+    /// <summary>
+    /// Loads the medium level.
+    /// </summary>
     public void LoadMediumLevel()
     {
         SceneManager.LoadScene(_mediumLevel);
     }
     
+    /// <summary>
+    /// Loads the hard level.
+    /// </summary>
     public void LoadHardLevel()
     {
         SceneManager.LoadScene(_hardLevel);
     }
     
+    /// <summary>
+    /// Loads the very hard level.
+    /// </summary>
     public void LoadVeryHardLevel()
     {
         SceneManager.LoadScene(_veryHardLevel);
     }
     
+    /// <summary>
+    /// Exits the game.
+    /// </summary>
     public void Exit()
     {
         Application.Quit();
     }
     
+    /// <summary>
+    /// Sets the volume.
+    /// </summary>
+    /// <param name="volume">Value of volume.</param>
     public void SetVolume(float volume) 
     {
         AudioListener.volume = volume;
         volumeTextValue.text = volume.ToString("0.0");
     }
 
+    /// <summary>
+    /// Sets the brightness.
+    /// </summary>
+    /// <param name="brightness">Value of the brightness.</param>
     public void SetBrightness(float brightness)
     {
         _brightnessLevel = brightness;
         brightnessTextValue.text = brightness.ToString("0.0");
     }
     
+    /// <summary>
+    /// Applies the changed settings.
+    /// </summary>
     public void SettingsApply()
     {
         PlayerPrefs.SetFloat("masterBrightness", _brightnessLevel);
@@ -69,6 +95,9 @@ public class MenuController : MonoBehaviour
         StartCoroutine(ConfirmationBox());
     }
 
+    /// <summary>
+    /// Displays the confirmation box.
+    /// </summary>
     public IEnumerator ConfirmationBox()
     {
         confirmationPrompt.SetActive(true);
